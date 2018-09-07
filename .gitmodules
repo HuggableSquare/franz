@@ -1,0 +1,12 @@
+[submodule "src/recipes/slack"]
+	path = src/recipes/slack
+	url = https://github.com/HuggableSquare/recipe-slack
+[submodule "src/recipes/rocketchat"]
+	path = src/recipes/rocketchat
+	url = https://github.com/HuggableSquare/recipe-rocketchat.git
+[submodule "src/recipes/thelounge"]
+	path = src/recipes/thelounge
+	url = https://github.com/HuggableSquare/franz-thelounge.git
+[submodule "src/recipes/discord"]
+	path = src/recipes/discord
+	url = https://github.com/HuggableSquare/recipe-discord.git

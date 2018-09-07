@@ -10,7 +10,7 @@ export function getRecipeDirectory(id = '') {
 }
 
 export function getDevRecipeDirectory(id = '') {
-  return path.join(app.getPath('userData'), 'recipes', 'dev', id);
+  return path.join(__dirname, '..', 'recipes', id);
 }
 
 export function loadRecipeConfig(recipeId) {
