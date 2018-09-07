@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactTooltip from 'react-tooltip';
 import { defineMessages, intlShape } from 'react-intl';
-import { observer } from 'mobx-react';
+import { observer, PropTypes as MobxPropTypes } from 'mobx-react';
 
 import Tabbar from '../services/tabs/Tabbar';
 import { ctrlKey } from '../../environment';
@@ -32,6 +32,7 @@ export default class Sidebar extends Component {
     openSettings: PropTypes.func.isRequired,
     toggleMuteApp: PropTypes.func.isRequired,
     isAppMuted: PropTypes.bool.isRequired,
+    services: MobxPropTypes.arrayOrObservableArray.isRequired,
   }
 
   static contextTypes = {
@@ -55,11 +56,12 @@ export default class Sidebar extends Component {
   }
 
   render() {
-    const { openSettings, toggleMuteApp, isAppMuted } = this.props;
+    const { openSettings, toggleMuteApp, isAppMuted, services } = this.props;
     const { intl } = this.context;
+    const activeService = services.find(service => service.isActive);
 
     return (
-      <div className="sidebar">
+      <div className="sidebar" style={{ background: activeService ? activeService.sidebarColor : null }}>
         <Tabbar
           {...this.props}
           enableToolTip={() => this.enableToolTip()}

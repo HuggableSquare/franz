@@ -368,6 +368,9 @@ export default class ServicesStore extends Store {
           redirect: false,
         });
       }
+    } else if (channel === 'sidebarColor') {
+      const color = args[0];
+      service.sidebarColor = color;
     } else if (channel === 'new-window') {
       const url = args[0];
 
